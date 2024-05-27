@@ -9,7 +9,7 @@ namespace XoXOyunu
         {
             InitializeComponent();
         }
-
+        //YORUM
         private void XoxTiklama(object sender, EventArgs e)
         {
             Button butonSecilen= sender as Button;//9 butona ayný anda týklandýðý için gönderilen butonu seçmemizi saðlayacak.
