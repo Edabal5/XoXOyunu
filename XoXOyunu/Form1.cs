@@ -12,135 +12,135 @@ namespace XoXOyunu
 
         private void XoxTiklama(object sender, EventArgs e)
         {
-            Button butonSecilen= sender as Button;//9 butona aynı anda tıklandığı için gönderilen butonu seçmemizi sağlayacak.
+            Button butonSecilen= sender as Button;//9 butona aynÄ± anda tÄ±klandÄ±ÄŸÄ± iÃ§in gÃ¶nderilen butonu seÃ§memizi saÄŸlayacak.
 
-            if (lblXo.Text=="X" )//Sıra X de ise 
+            if (lblXo.Text=="${{ secrets.CONNECTION_STRING }}" )//SÄ±ra X de ise 
             {
-                butonSecilen.Text = "X";//Eğer labelın textinde X yazıyorsa tıklanan butonun texti de X olur.
-                butonSecilen.Enabled = false;//Tıklanan butona tekrar tıklanmaması için.
-                lblXo.Text = "O";//Bir sonraki sıra O ya geçeceği için yazdık.
+                butonSecilen.Text = "X";//EÄŸer labelÄ±n textinde X yazÄ±yorsa tÄ±klanan butonun texti de X olur.
+                butonSecilen.Enabled = false;//TÄ±klanan butona tekrar tÄ±klanmamasÄ± iÃ§in.
+                lblXo.Text = "O";//Bir sonraki sÄ±ra O ya geÃ§eceÄŸi iÃ§in yazdÄ±k.
 
             }
             else
             {
-                butonSecilen.Text = "O";//Eğer seçilen buton X değilde O ise tıklanan butonun texti O olur.
-                butonSecilen.Enabled = false;//Tıklanan butona tekrar tıklanmaması için.
-                lblXo.Text = "X";//Tekrar sıra X e geçti.
+                butonSecilen.Text = "O";//EÄŸer seÃ§ilen buton X deÄŸilde O ise tÄ±klanan butonun texti O olur.
+                butonSecilen.Enabled = false;//TÄ±klanan butona tekrar tÄ±klanmamasÄ± iÃ§in.
+                lblXo.Text = "X";//Tekrar sÄ±ra X e geÃ§ti.
             }
 
-            #region Oyunun Kazanılması
-            //Oyunun kazanılması için 8 ihtimal var:
+            #region Oyunun KazanÄ±lmasÄ±
+            //Oyunun kazanÄ±lmasÄ± iÃ§in 8 ihtimal var:
 
-            //1:Button(1,2,3)'ün birlikte X olması .
-            //2:Button(4,5,6)'ün birlikte X olması .
-            //3:Button(7,8,9)'ün birlikte X olması .
-            //4:Button(1,4,7)'ün birlikte X olması .
-            //5:Button(2,5,8)'ün birlikte X olması .
-            //6:Button(3,6,9)'ün birlikte X olması .
-            //7:Button(1,5,9)'ün birlikte X olması .
-            //8:Button(3,5,7)'ün birlikte X olması .
+            //1:Button(1,2,3)'Ã¼n birlikte X olmasÄ± .
+            //2:Button(4,5,6)'Ã¼n birlikte X olmasÄ± .
+            //3:Button(7,8,9)'Ã¼n birlikte X olmasÄ± .
+            //4:Button(1,4,7)'Ã¼n birlikte X olmasÄ± .
+            //5:Button(2,5,8)'Ã¼n birlikte X olmasÄ± .
+            //6:Button(3,6,9)'Ã¼n birlikte X olmasÄ± .
+            //7:Button(1,5,9)'Ã¼n birlikte X olmasÄ± .
+            //8:Button(3,5,7)'Ã¼n birlikte X olmasÄ± .
 
-            // "X" için olanlar:
+            // "X" iÃ§in olanlar:
 
             if (button1.Text=="X" && button2.Text == "X"&& button3.Text == "X")
             {
                 MessageBox.Show("KAZANAN : X");
-                OyunBitisi();//Kazanan olduğu için OyunBitisi() metodunu çağırdık.
+                OyunBitisi();//Kazanan olduÄŸu iÃ§in OyunBitisi() metodunu Ã§aÄŸÄ±rdÄ±k.
             }
             if (button4.Text == "X" && button5.Text == "X" && button6.Text == "X")
             {
                 MessageBox.Show("KAZANAN : X");
-                OyunBitisi();//Kazanan olduğu için OyunBitisi() metodunu çağırdık.
+                OyunBitisi();//Kazanan olduÄŸu iÃ§in OyunBitisi() metodunu Ã§aÄŸÄ±rdÄ±k.
             }
             if (button7.Text == "X" && button8.Text == "X" && button9.Text == "X")
             {
                 MessageBox.Show("KAZANAN : X");
-                OyunBitisi();//Kazanan olduğu için OyunBitisi() metodunu çağırdık.
+                OyunBitisi();//Kazanan olduÄŸu iÃ§in OyunBitisi() metodunu Ã§aÄŸÄ±rdÄ±k.
             }
             if (button1.Text == "X" && button4.Text == "X" && button7.Text == "X")
             {
                 MessageBox.Show("KAZANAN : X");
-                OyunBitisi();//Kazanan olduğu için OyunBitisi() metodunu çağırdık.
+                OyunBitisi();//Kazanan olduÄŸu iÃ§in OyunBitisi() metodunu Ã§aÄŸÄ±rdÄ±k.
             }
             if (button2.Text == "X" && button5.Text == "X" && button8.Text == "X")
             {
                 MessageBox.Show("KAZANAN : X");
-                OyunBitisi();//Kazanan olduğu için OyunBitisi() metodunu çağırdık.
+                OyunBitisi();//Kazanan olduÄŸu iÃ§in OyunBitisi() metodunu Ã§aÄŸÄ±rdÄ±k.
             }
             if (button3.Text == "X" && button6.Text == "X" && button9.Text == "X")
             {
                 MessageBox.Show("KAZANAN : X");
-                OyunBitisi();//Kazanan olduğu için OyunBitisi() metodunu çağırdık.
+                OyunBitisi();//Kazanan olduÄŸu iÃ§in OyunBitisi() metodunu Ã§aÄŸÄ±rdÄ±k.
             }
             if (button1.Text == "X" && button5.Text == "X" && button9.Text == "X")
             {
                 MessageBox.Show("KAZANAN : X");
-                OyunBitisi();//Kazanan olduğu için OyunBitisi() metodunu çağırdık.
+                OyunBitisi();//Kazanan olduÄŸu iÃ§in OyunBitisi() metodunu Ã§aÄŸÄ±rdÄ±k.
             }
             if (button3.Text == "X" && button5.Text == "X" && button7.Text == "X")
             {
                 MessageBox.Show("KAZANAN : X");
-                OyunBitisi();//Kazanan olduğu için OyunBitisi() metodunu çağırdık.
+                OyunBitisi();//Kazanan olduÄŸu iÃ§in OyunBitisi() metodunu Ã§aÄŸÄ±rdÄ±k.
             }
 
-            //Aynı işlemler "O" için de geçerli
+            //AynÄ± iÅŸlemler "O" iÃ§in de geÃ§erli
 
             if (button1.Text == "O" && button2.Text == "O" && button3.Text == "O")
             {
                 MessageBox.Show("KAZANAN : O");
-                OyunBitisi();//Kazanan olduğu için OyunBitisi() metodunu çağırdık.
+                OyunBitisi();//Kazanan olduÄŸu iÃ§in OyunBitisi() metodunu Ã§aÄŸÄ±rdÄ±k.
             }
             if (button4.Text == "O" && button5.Text == "O" && button6.Text == "O")
             {
                 MessageBox.Show("KAZANAN : O");
-                OyunBitisi();//Kazanan olduğu için OyunBitisi() metodunu çağırdık.
+                OyunBitisi();//Kazanan olduÄŸu iÃ§in OyunBitisi() metodunu Ã§aÄŸÄ±rdÄ±k.
             }
             if (button7.Text == "O" && button8.Text == "O" && button9.Text == "O")
             {
                 MessageBox.Show("KAZANAN : O");
-                OyunBitisi();//Kazanan olduğu için OyunBitisi() metodunu çağırdık.
+                OyunBitisi();//Kazanan olduÄŸu iÃ§in OyunBitisi() metodunu Ã§aÄŸÄ±rdÄ±k.
             }
             if (button1.Text == "O" && button4.Text == "O" && button7.Text == "O")
             {
                 MessageBox.Show("KAZANAN : O");
-                OyunBitisi();//Kazanan olduğu için OyunBitisi() metodunu çağırdık.
+                OyunBitisi();//Kazanan olduÄŸu iÃ§in OyunBitisi() metodunu Ã§aÄŸÄ±rdÄ±k.
             }
             if (button2.Text == "O" && button5.Text == "O" && button8.Text == "O")
             {
                 MessageBox.Show("KAZANAN : O");
-                OyunBitisi();//Kazanan olduğu için OyunBitisi() metodunu çağırdık.
+                OyunBitisi();//Kazanan olduÄŸu iÃ§in OyunBitisi() metodunu Ã§aÄŸÄ±rdÄ±k.
             }
             if (button3.Text == "O" && button6.Text == "O" && button9.Text == "O")
             {
                 MessageBox.Show("KAZANAN : O");
-                OyunBitisi();//Kazanan olduğu için OyunBitisi() metodunu çağırdık.
+                OyunBitisi();//Kazanan olduÄŸu iÃ§in OyunBitisi() metodunu Ã§aÄŸÄ±rdÄ±k.
             }
             if (button1.Text == "O" && button5.Text == "O" && button9.Text == "O")
             {
                 MessageBox.Show("KAZANAN : O");
-                OyunBitisi();//Kazanan olduğu için OyunBitisi() metodunu çağırdık.
+                OyunBitisi();//Kazanan olduÄŸu iÃ§in OyunBitisi() metodunu Ã§aÄŸÄ±rdÄ±k.
             }
             if (button3.Text == "O" && button5.Text == "O" && button7.Text == "O")
             {
                 MessageBox.Show("KAZANAN : O");
-                OyunBitisi();//Kazanan olduğu için OyunBitisi() metodunu çağırdık.
+                OyunBitisi();//Kazanan olduÄŸu iÃ§in OyunBitisi() metodunu Ã§aÄŸÄ±rdÄ±k.
             }
             #endregion
 
             //Berabere kalma durumunda yani kazanan olmazsa:
 
-            if (button1.Text!=""&& button2.Text != "" && button3.Text != "" && button4.Text != "" && button5.Text != "" && button6.Text != "" && button7.Text != "" && button9.Text != "" && button9.Text != "") //Tüm butonların içi boş değilse(Yani doluysa) ve kazanan olmadığı için berabere kalınır.
+            if (button1.Text!=""&& button2.Text != "" && button3.Text != "" && button4.Text != "" && button5.Text != "" && button6.Text != "" && button7.Text != "" && button9.Text != "" && button9.Text != "") //TÃ¼m butonlarÄ±n iÃ§i boÅŸ deÄŸilse(Yani doluysa) ve kazanan olmadÄ±ÄŸÄ± iÃ§in berabere kalÄ±nÄ±r.
             {
                 MessageBox.Show("Berabere!");
-                OyunBitisi();//Berabere kalındığında da yine oyun biter,bu yüzden OyunBitisi() metodunu çağırırız.               
+                OyunBitisi();//Berabere kalÄ±ndÄ±ÄŸÄ±nda da yine oyun biter,bu yÃ¼zden OyunBitisi() metodunu Ã§aÄŸÄ±rÄ±rÄ±z.               
             }
 
         }
-        private void OyunBitisi() //Oyun bitişi için metod tanımladık.
+        private void OyunBitisi() //Oyun bitiÅŸi iÃ§in metod tanÄ±mladÄ±k.
         {
-            lblXo.Text = "X";//X le başladığı için oyun bitişinde tekrar sıra X e dönüyor.
+            lblXo.Text = "X";//X le baÅŸladÄ±ÄŸÄ± iÃ§in oyun bitiÅŸinde tekrar sÄ±ra X e dÃ¶nÃ¼yor.
 
-            //Butonların textlerinin içi boş hale getirilir.
+            //ButonlarÄ±n textlerinin iÃ§i boÅŸ hale getirilir.
             button1.Text = "";
             button2.Text = "";
             button3.Text = "";
@@ -151,7 +151,7 @@ namespace XoXOyunu
             button8.Text = "";
             button9.Text = "";
 
-            //Kullanılan butonların enabled (tıklanabilirlik) özelliğini aktif hale getirmemiz gerekiyor.
+            //KullanÄ±lan butonlarÄ±n enabled (tÄ±klanabilirlik) Ã¶zelliÄŸini aktif hale getirmemiz gerekiyor.
 
             button1.Enabled= true;
             button2.Enabled= true;
@@ -164,7 +164,7 @@ namespace XoXOyunu
             button9.Enabled= true;
 
 
-            //Oyunu 3 kere oynattıktan sonra kapatıyoruz.
+            //Oyunu 3 kere oynattÄ±ktan sonra kapatÄ±yoruz.
             oyunSayac++;
             if (oyunSayac == 3)
             {
